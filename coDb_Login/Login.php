@@ -1,9 +1,8 @@
 <?php
-$email=" "; 
-$person="dorian";
-setcookie('pseudo' , "$person" , time() + 10 *24*3600, null, null, false, true);
-setcookie("email" , "$email" , time() + 10 *24 *3600, null, null, false, true);
-echo $_COOKIE['pseudo'];
+
+setcookie('pseudo' , "dorian" , time() + 10 *24*3600, null, null, false, true);
+setcookie("email" , "dorianstorella@hotmail.com" , time() + 10 *24 *3600, null, null, false, true);
+
 session_start();
 
 $_SESSION['Prenom']="dorian";
@@ -16,10 +15,32 @@ $_SESSION['Prenom']="dorian";
     <title>Document</title>
 </head>
 <body>
-    <p>hello <?php echo $_COOKIE['pseudo']?></p>
 
-<!--formulaire de connexion et ou demander une session
-<form action=""></form>
+
+<h2>creer vous une session</h2>
+<!--formulaire pour demander une session-->
+<form action="insert.php">
+
+<label for="NouvNom">quel est ton pseudo ?</label>
+<input type="text" name="NouvNom" id="NouvNom">
+
+<label for="NouvEmail">quel est ton email ?</label>
+<input type="email" name="NouvEmail" id="NouvEmail">
+
+<input type="submit" name="nouvSubmit">
+</form>
+
+<h2>connecter vous!</h2>
+<form action="post">
+<label for="nom">Quel est votre nom ?</label>
+<input type="text" name="nom">
+
+<label for="email">votre email?</label>
+<input type="text" name="email">
+
+<input type="submit" name="submit">
+</form>
+
 
 </body>
 </html>
