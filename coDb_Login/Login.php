@@ -1,11 +1,27 @@
 <?php
 
-setcookie('pseudo' , "dorian" , time() + 10 *24*3600, null, null, false, true);
-setcookie("email" , "dorianstorella@hotmail.com" , time() + 10 *24 *3600, null, null, false, true);
-
 session_start();
+include 'connBD.php';
+if (isset($_POST['email']))
+{   
+    $email=$_POST['email'];
+    $sql = $db -> prepare("SELECT email , mdp FROM utiliseteurs where email='$email'");
+    $stmt = $db->prepare($sql);
+    $stmt -> execute();
 
-$_SESSION['Prenom']="dorian";
+    $result = $stmt->fetch();
+
+    $verifypass = password_verify($_POST['mdp'],$result['pass']); 
+}
+
+    if (!$result)
+    {
+
+    }                                                        /*$_SESSION['email']=$_POST["email"];
+                                                            $_SESSION['mdp']=$_POST["mdp"];
+                                                            */
+
+    header('location: chat.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,29 +31,23 @@ $_SESSION['Prenom']="dorian";
     <title>Document</title>
 </head>
 <body>
+<!--
+    36
+    jeanbon
+    marcello@yahoo.com
+    123456
+-->
 
-
-<h2>creer vous une session</h2>
-<!--formulaire pour demander une session-->
-<form action="insert.php">
-
-<label for="NouvNom">quel est ton pseudo ?</label>
-<input type="text" name="NouvNom" id="NouvNom">
-
-<label for="NouvEmail">quel est ton email ?</label>
-<input type="email" name="NouvEmail" id="NouvEmail">
-
-<input type="submit" name="nouvSubmit">
-</form>
 
 <h2>connecter vous!</h2>
-<form action="post">
-<label for="nom">Quel est votre nom ?</label>
-<input type="text" name="nom">
+
+<form action="">
 
 <label for="email">votre email?</label>
 <input type="text" name="email">
 
+<label for="nom">Quel est votre mdp ?</label>
+<input type="text" name="mdp">
 <input type="submit" name="submit">
 </form>
 
