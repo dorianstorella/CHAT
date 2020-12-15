@@ -1,27 +1,35 @@
 <?php
 
-session_start();
+
 include 'connBD.php';
 if (isset($_POST['email']))
 {   
     $email=$_POST['email'];
-    $sql = $db -> prepare("SELECT email , mdp FROM utiliseteurs where email='$email'");
+    $sql = ("SELECT pseudo, email, mdp FROM utilisateurs where email='$email'");
     $stmt = $db->prepare($sql);
     $stmt -> execute();
 
     $result = $stmt->fetch();
-
+    echo $result;
     $verifypass = password_verify($_POST['mdp'],$result['pass']); 
-}
 
-    if (!$result)
+
+if (!$result)
+{
+    echo 'mauvais pass';
+}                                                        /*$_SESSION['email']=$_POST["email"];
+                                                          $_SESSION['mdp']=$_POST["mdp"];*/
+else
+{
+    if($verifypass)
     {
-
-    }                                                        /*$_SESSION['email']=$_POST["email"];
-                                                            $_SESSION['mdp']=$_POST["mdp"];
-                                                            */
-
-    header('location: chat.php');
+        session_start();
+        $_SESSION['pseudo'] = $result['pseudo'];
+        echo $_SESSION['pseudo'];
+    }
+}                                                        
+}
+    //header('location: chat.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +49,7 @@ if (isset($_POST['email']))
 
 <h2>connecter vous!</h2>
 
-<form action="">
+<form action="" method="POST">
 
 <label for="email">votre email?</label>
 <input type="text" name="email">
