@@ -10,7 +10,8 @@ if (isset($_POST['email']))
     $stmt -> execute();
 
     $result = $stmt->fetch();
-   print_r ($result);
+    print_r ($result);
+    
     $verifypass = password_verify($_POST['mdp'],$result['mdp']); 
 
 
@@ -24,10 +25,12 @@ if (isset($_POST['email']))
         if($verifypass)
         {
             session_start();
+            $_SESSION['mdp'] = $result['mdp'];
             $_SESSION['email'] = $result['email'];
             $_SESSION['pseudo'] = $result['pseudo'];
             echo $_SESSION['pseudo'];
             echo 'vous etes connecte';
+            header('location: chat.php');
         }
         else
         {
@@ -35,7 +38,7 @@ if (isset($_POST['email']))
         }
     }                                                        
 }
-  header('location: chat.php');
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +64,11 @@ if (isset($_POST['email']))
 <input type="text" name="email">
 
 <label for="nom">Quel est votre mdp ?</label>
-<input type="text" name="mdp">
+<input type="password" name="mdp">
+
+<label for="autoCo">connection automatique</label>
+<input type="checkbox">
+
 <input type="submit" name="submit">
 </form>
 

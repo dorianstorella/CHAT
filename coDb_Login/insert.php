@@ -1,21 +1,15 @@
 <?php
 session_start();
-if (isset($_POST['NouvNom']))
-{
-$_SESSION['pseudo']=$_POST["NouvNom"];
-$_SESSION['mdp']=$_POST["mdp"];
-}
-include 'connBD.php';
+echo $_SESSION['pseudo'];
 
-    $nom=$_POST["NouvNom"];   
-    $email=$_POST["NouvEmail"];
-    $mdp=$_POST["mdp"];
+ 
+    echo $_SESSION['pseudo'];
 
-    $sql ="INSERT INTO  utilisateurs (pseudo, email, mdp)  VALUES ('$nom','$email','$mdp')";
-    $stmt =$db->prepare($sql);
-    $stmt->execute();
-
-
-
-    header('location: Login.php');
 ?>
+<p>Etes vous sur de vouloir vous deconnecter ?</p>
+<a href="deco.php">
+    <button>oui</button>
+</a>
+<a href="chat.php">
+    <button>non</button>
+</a>

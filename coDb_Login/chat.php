@@ -1,9 +1,15 @@
 <?php
 session_start();
+//echo $_SESSION['mdp'];
+$email = $_SESSION['email'];
+setcookie("email", "$email", time() + 10*24*3600, null, null, false, true);
+echo $_COOKIE['email'];
 
-
-echo $_SESSION['pseudo'];
-echo $_SESSION['email'];
+$mdp = $_SESSION['mdp'];
+setcookie("mdp", "$mdp", time() + 10*24*3600, null, null, false, true);
+echo $_COOKIE['mdp'];
+//echo $_SESSION['pseudo'];
+//echo $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +20,9 @@ echo $_SESSION['email'];
 </head>
 <body>
     <h1>Bienvenus <?php echo  $_SESSION['pseudo'];?></h1>
-
+    
+    <form method="Post" action="insert.php">
+       <input type="submit" value="deconnexion"/>
+    </form>
 </body>
 </html>
