@@ -10,26 +10,32 @@ if (isset($_POST['email']))
     $stmt -> execute();
 
     $result = $stmt->fetch();
-    echo $result;
-    $verifypass = password_verify($_POST['mdp'],$result['pass']); 
+   print_r ($result);
+    $verifypass = password_verify($_POST['mdp'],$result['mdp']); 
 
 
-if (!$result)
-{
-    echo 'mauvais pass';
-}                                                        /*$_SESSION['email']=$_POST["email"];
-                                                          $_SESSION['mdp']=$_POST["mdp"];*/
-else
-{
-    if($verifypass)
+    if (!$result)
     {
-        session_start();
-        $_SESSION['pseudo'] = $result['pseudo'];
-        echo $_SESSION['pseudo'];
-    }
-}                                                        
+        echo 'mauvais pass';
+    }                                                   /*$_SESSION['email']=$_POST["email"];
+                                                        $_SESSION['mdp']=$_POST["mdp"];*/
+    else
+    {
+        if($verifypass)
+        {
+            session_start();
+            $_SESSION['email'] = $result['email'];
+            $_SESSION['pseudo'] = $result['pseudo'];
+            echo $_SESSION['pseudo'];
+            echo 'vous etes connecte';
+        }
+        else
+        {
+            echo 'mauvais identifiant';
+        }
+    }                                                        
 }
-    //header('location: chat.php');
+  header('location: chat.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -3,7 +3,7 @@ session_start();
 
 
 echo $_SESSION['pseudo'];
-
+echo $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
