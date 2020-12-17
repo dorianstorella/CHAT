@@ -24,28 +24,44 @@ session_start();
     <div class="col-1"></div>
     <!--    INFORMATION      -->
     <ul class="list-group bg-light col-6">
-    <li class="list-goup-item">ecole/taff :</li>
+    <li class="list-goup-item">nom/prenom :</li>
     <li class="list-goup-item">date de naissance :</li>
+    <li class="list-goup-item">hobbie :</li>
     </ul>
     <ul class="list-group bg-light col-4">
-    <li class="list-goup-item">hobbie :</li>
+    <li class="list-goup-item">addresse mail:</li>
+    <li class="list-goup-item">ecole/taff :</li>
     <li class="list-goup-item">valeur :</li>
     </ul>
     </div>
     <!--          END            -->
     </section>
 
-    <section class="container-fluid btn mb-5" id="amis">
-    <div class="row col-5">
-    <div class="">hhddddddddddd</div>
+    <section class="container-fluid mb-5" id="amis">
+    <div class="row">
+   
+    <ul class="list-group bg-light btn col-3">  
     <p>amis</p>
-    <ul class="list-group bg-light">
     <li class="list-goup-item">tom</li>
     <li class="list-goup-item">martin</li>
     <li class="list-goup-item">jean</li>
     <li class="list-goup-item">pilou</li>
     <button>voir plus</button>
     </ul>
+    <div class="col-4"></div>
+    <div class="col-5 ">
+    <div class="card" style="width: 19rem; height: 20rem;">
+    <div class="card-body">
+    <h5 class="card-title">publication</h5>
+    <p class="card-text" id="message"> hello j essaie de faire mon premier profil avec phpmyadmin php</p>
+    
+     </div>
+    </div>
+
+
+
+    
+    </div>
     </div>
     </section>
     <!--      AFFICHER AMIS     -->
