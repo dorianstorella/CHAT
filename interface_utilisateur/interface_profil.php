@@ -9,10 +9,50 @@ session_start();
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body>
-    <h1> <?php echo $_SESSION['pseudo'] ?></h1>
-    <section class="intro">
+<body class="container-fluid col-10">
+    <header class="container-fluid mb-5 btn">
+    <div class="row">
+    <img href="" alt="couverture" class="col-12"> 
+    <img href="" alt="photo de profil" class="col-12">
     
+    <h1> <?php echo $_SESSION['pseudo'] ?></h1>
+    </div>
+    </header>
+    
+    <section class="container-fluid mb-5 " id="intro">
+    <div class="row ">
+    <div class="col-1"></div>
+    <!--    INFORMATION      -->
+    <ul class="list-group bg-light col-6">
+    <li class="list-goup-item">ecole/taff :</li>
+    <li class="list-goup-item">date de naissance :</li>
+    </ul>
+    <ul class="list-group bg-light col-4">
+    <li class="list-goup-item">hobbie :</li>
+    <li class="list-goup-item">valeur :</li>
+    </ul>
+    </div>
+    <!--          END            -->
+    </section>
+
+    <section class="container-fluid btn mb-5" id="amis">
+    <div class="row col-5">
+    <div class="">hhddddddddddd</div>
+    <p>amis</p>
+    <ul class="list-group bg-light">
+    <li class="list-goup-item">tom</li>
+    <li class="list-goup-item">martin</li>
+    <li class="list-goup-item">jean</li>
+    <li class="list-goup-item">pilou</li>
+    <button>voir plus</button>
+    </ul>
+    </div>
+    </section>
+    <!--      AFFICHER AMIS     -->
+
+
+
+    <!--          END           -->
     </section>
     
     
