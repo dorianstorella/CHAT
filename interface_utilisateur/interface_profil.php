@@ -10,12 +10,12 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body class="container-fluid col-10">
-    <header class="container-fluid mb-5 btn">
+    <header class="container-fluid mb-5 btn-primary btn">
     <div class="row">
     <img href="" alt="couverture" class="col-12"> 
     <img href="" alt="photo de profil" class="col-12">
     
-    <h1> <?php echo $_SESSION['pseudo'] ?></h1>
+    <h1> <?php echo $_SESSION['pseudo']; echo $_SESSION['id']; ?></h1>
     </div>
     </header>
     
