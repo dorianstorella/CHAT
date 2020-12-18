@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo $_SESSION['pic'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +13,10 @@ session_start();
 <body class="container-fluid col-10">
     <header class="container-fluid mb-5 btn-primary btn">
     <div class="row">
-    <img href="" alt="couverture" class="col-12"> 
-    <img href="" alt="photo de profil" class="col-12">
+    <!--<img href="" alt="couverture" class="col-12">--> 
+    <img src="<?php echo $_SESSION['pic']?>" alt="photo de profil" class="col-12">
     
-    <h1> <?php echo $_SESSION['pseudo']; echo $_SESSION['id']; ?></h1>
+    <h1> <?php echo $_SESSION['pseudo']; ?></h1>
     </div>
     </header>
     
