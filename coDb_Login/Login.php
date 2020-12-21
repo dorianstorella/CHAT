@@ -5,7 +5,7 @@ include 'connBD.php';
 if (isset($_POST['email']))
 {   
     $email=$_POST['email'];
-    $sql = ("SELECT id, pseudo, email, mdp FROM utilisateurs where email='$email'");
+    $sql = ("SELECT id, pseudo, email, mdp, anniv, job, nom FROM utilisateurs where email='$email'");
     $stmt = $db->prepare($sql);
     $stmt -> execute();
 
@@ -29,8 +29,12 @@ if (isset($_POST['email']))
             $_SESSION['email'] = $result['email'];
             $_SESSION['pseudo'] = $result['pseudo'];
             $_SESSION['id'] = $result['id'];
+            $_SESSION['anniv'] = $result['anniv'];
+            $_SESSION['job'] = $result['job']; 
+            $_SESSION['nom'] = $result['nom'];
             echo $_SESSION['pseudo'];
             echo 'vous etes connecte';
+        
             header('location: chat.php');
         }
         else

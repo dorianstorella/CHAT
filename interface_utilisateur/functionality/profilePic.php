@@ -8,14 +8,14 @@ if (isset($_POST['pic']))
 {   
     $url =$_POST['pic'];
     echo "$url";
-    $sql =("UPDATE utilisateurs set pic = '$url' where id='$id'");
+    $sql =("UPDATE profils set pic = '$url' where id='$id'");
     $stmt = $db->prepare($sql);
     $stmt -> execute();
     echo "success";
 
 }
 //voir pic
-$sql = ("SELECT  pic FROM utilisateurs where id='$id'");
+$sql = ("SELECT  pic FROM profils where id='$id'");
 $stmt = $db->prepare($sql);
 $stmt ->execute();
 

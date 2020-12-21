@@ -1,6 +1,8 @@
 <?php
+
 session_start();
-echo $_SESSION['pic'];
+
+//echo $_SESSION['pic'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,34 +12,44 @@ echo $_SESSION['pic'];
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body class="container-fluid col-10">
-    <header class="container-fluid mb-5 btn-primary btn">
-    <div class="row">
-    <!--<img href="" alt="couverture" class="col-12">--> 
-    <img src="<?php echo $_SESSION['pic']?>" alt="photo de profil" class="col-12">
+<body class="container-fluid  col-10">
+    <header>
+    <div class="row mb-5 btn-warning">
+    <div class="col-1"></div>   
+    <img src="<?php echo $_SESSION['pic']?>" alt="photo de profil" class="mb-5 col-4">
+    <div class="col-1"></div>
+    <div class="col-5">
+    <h1 class="col-6  mb-5"> <?php echo $_SESSION['pseudo']; ?></h1>
     
-    <h1> <?php echo $_SESSION['pseudo']; ?></h1>
+    <!--    INFORMATION      -->
+    <ul class="list-group bg-light  ">
+    <li class="list-goup-item col-12">nom/prenom : <?php echo $_SESSION['nom']?></li>
+    <li class="list-goup-item">date de naissance :<?php echo $_SESSION['anniv']?></li>
+    
+    </ul>
+    <ul class="list-group bg-light ">
+    <li class="list-goup-item">addresse mail:<?php echo $_SESSION['email']?></li>
+    <li class="list-goup-item">Metier :<?php echo $_SESSION['job']?></li>
+    </ul>
+    <form action="functionality/info.php">
+    <input type="submit" value="mettre a jour vos info">
+    </form>
+    </div>
     </div>
     </header>
-    
-    <section class="container-fluid mb-5 " id="intro">
-    <div class="row ">
-    <div class="col-1"></div>
-    <!--    INFORMATION      -->
-    <ul class="list-group bg-light col-6">
-    <li class="list-goup-item">nom/prenom :</li>
-    <li class="list-goup-item">date de naissance :</li>
-    <li class="list-goup-item">hobbie :</li>
-    </ul>
-    <ul class="list-group bg-light col-4">
-    <li class="list-goup-item">addresse mail:</li>
-    <li class="list-goup-item">ecole/taff :</li>
-    <li class="list-goup-item">valeur :</li>
-    </ul>
-    </div>
     <!--          END            -->
     </section>
+    <section>
+  
+    <div class="btn col-12">
+    <div class="card btn">
+    <div class="card-body">
+    <h5 class="card-title">derniere publication</h5>
+    <p class="card-text" id="message"> hello j essaie de faire mon premier profil avec phpmyadmin php</p>
+    </div>
+    </section>
 
+    
     <section class="container-fluid mb-5" id="amis">
     <div class="row">
    
@@ -49,19 +61,8 @@ echo $_SESSION['pic'];
     <li class="list-goup-item">pilou</li>
     <button>voir plus</button>
     </ul>
-    <div class="col-4"></div>
-    <div class="col-5 ">
-    <div class="card" style="width: 19rem; height: 20rem;">
-    <div class="card-body">
-    <h5 class="card-title">publication</h5>
-    <p class="card-text" id="message"> hello j essaie de faire mon premier profil avec phpmyadmin php</p>
-    
-     </div>
     </div>
 
-
-
-    
     </div>
     </div>
     </section>
