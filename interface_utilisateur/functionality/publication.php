@@ -1,7 +1,7 @@
 <?php
 include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
-session_start();
-echo $_SESSION["id"];
+//session_start();
+//echo $_SESSION["id"];
 $id=$_SESSION["id"];
 $sql = ("SELECT id from publication where id='$id'");
 
@@ -44,6 +44,6 @@ echo $_SESSION['msg_MHM'];
 ?>
 
 <form action="" method="Post">
-<textarea name="publi" id="publi" cols="90" rows="10"></textarea>
+<textarea name="publi" id="publi" cols="60" rows="10"></textarea>
 <input type="submit" name="submit" id="submit">
 </form>

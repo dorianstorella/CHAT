@@ -1,6 +1,6 @@
 <?php
 include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
-session_start();
+//session_start();
 $id = $_SESSION['id'];
 echo $id;
 if (isset($_POST['anniv']))
@@ -10,7 +10,7 @@ if (isset($_POST['anniv']))
     $email = $_POST['email'];
     $job = $_POST['job'];
 
-    $sql=("UPDATE utilisateurs SET email='$email', anniv='$birthday', job='$job', nom='$Fname_Lname'where id='$id'");
+    $sql=("UPDATE utilisateurs SET , anniv='$birthday', job='$job', nom='$Fname_Lname'where id='$id'");
     $stmt= $db->prepare($sql);
     $stmt->execute();
     echo"success";
@@ -23,7 +23,6 @@ if (isset($_POST['anniv']))
     echo $result['anniv'];
     $_SESSION['anniv']= $result['anniv'];
     $_SESSION['job']=$result['job'];
-    $_SESSION['email']=$result['email'];
     $_SESSION['nom']=$result['nom'];
 }
 
@@ -43,8 +42,6 @@ if (isset($_POST['anniv']))
 <label for="job">job</label>
 <input type="text" name="job" id="job">
 
-<label for="email">email</label>
-<input type="text" name="email" id="email">
 
 <input type="submit" name="" value="mettre a jour vos info">
 </form>
