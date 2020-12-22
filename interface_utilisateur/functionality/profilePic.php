@@ -1,6 +1,6 @@
 <?php
 include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
-session_start();
+//session_start();
 $id = $_SESSION['id'];
 echo $id;
 ///envoyer pic
@@ -28,7 +28,7 @@ $_SESSION['pic']=$result['pic'];
 <form action="" method="Post">
 <label for="pic">modifier photo</label>
 
-<textarea id="pic" name="pic" rows="6" cols="68">
+<textarea id="pic" name="pic" rows="6" cols="60">
 note
 </textarea>
 

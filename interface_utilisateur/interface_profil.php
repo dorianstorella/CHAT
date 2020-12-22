@@ -12,14 +12,20 @@ session_start();
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body class="container-fluid  col-10">
+<body class="container-fluid  col-11">
     <header>
     <div class="row mb-5 btn-warning">
-    <div class="col-1"></div>   
-    <img src="<?php echo $_SESSION['pic']?>" alt="photo de profil" class="mb-5 col-4">
+     <div class="col-5"> 
+    <img src="<?php echo $_SESSION['pic']?>" alt="photo de profil" class=" mb-1 col-12 ">
+    <button type="button" class=" btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    modifier ta photo 
+    </button>
+    </div>
+    
+   
     <div class="col-1"></div>
     <div class="col-5">
-    <h1 class="col-6  mb-5"> <?php echo $_SESSION['pseudo']; ?></h1>
+    <h1 class="col-12 btn btn-danger mb-5"> <?php echo $_SESSION['pseudo']; ?></h1>
     
     <!--    INFORMATION      -->
     <ul class="list-group bg-light  ">
@@ -33,14 +39,14 @@ session_start();
     </ul>
     
     
+    <!--peut etre rassembler tout bouton-->
     
-    
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  modifier vos info 
-</button>
 
+<button type="button" class=" btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+    modifiez info
+    </button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,17 +63,43 @@ session_start();
     </div>
   </div>
 </div>
+</div>
     </header>
     <!--          END            -->
-    </section>
+    
+    
     <section>
   
-    <div class="btn col-12">
+    
+<!-- Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <?php  include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/profilePic.php';?>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-11">
     <div class="card btn">
     <div class="card-body">
     <h5 class="card-title">derniere publication</h5>
     <p class="card-text" id="message"> <?php echo $_SESSION['publication'] . $_SESSION['msg_MHM'] ?></p>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+</div>
+</div>
+   
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
   ajouter publication
     </button>
 
@@ -87,10 +119,7 @@ session_start();
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  </div>
 </div>
-
-    </div>
 
     </section>
 
@@ -116,7 +145,7 @@ session_start();
 
 
     <!--          END           -->
-    </section>
+  
     
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
