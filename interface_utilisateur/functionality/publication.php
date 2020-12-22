@@ -21,15 +21,25 @@ $result = $stmt->fetch();
 if (isset($_POST['publi']))
 {
     $publi=$_POST['publi'];
-    //ajouter time et peut etre regarde dans la data base si on a defaut value opu 
-    //ou si l erreur viens de justement date time 
+    //ajouter time et peut etre regarde dans la data base si on a defaut value ou 
+    //ou si l erreur viens de justement date time AAAA-MM-JJ HH:MM:SS
 
 
-    $sql=("INSERT INTO publication(publication,id) VALUES ('$publi','$id')");
-    $stmt-> prepare($sql);
+    $sql=("INSERT INTO publication(publication,id,msg_MHM) VALUES ('$publi','$id')");
+    $stmt = $db -> prepare($sql);
     $stmt->execute();
     echo "success";
-}
+};
+
+$sql = ("SELECT publication, (msg_MHM) from publication where id='$id'");
+$stmt = $db -> prepare($sql);
+$stmt->execute();
+
+$result = $stmt -> fetch();
+//echo $result['publication'];
+$_SESSION['publication']=$result['publication'];
+$_SESSION['msg_MHM']=$result['msg_MHM'];
+echo $_SESSION['msg_MHM'];
 ?>
 
 <form action="" method="Post">

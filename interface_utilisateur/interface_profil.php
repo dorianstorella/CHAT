@@ -45,7 +45,7 @@ session_start();
     <div class="card btn">
     <div class="card-body">
     <h5 class="card-title">derniere publication</h5>
-    <p class="card-text" id="message"> hello j essaie de faire mon premier profil avec phpmyadmin php</p>
+    <p class="card-text" id="message"> <?php echo $_SESSION['publication'] . $_SESSION['msg_MHM'] ?></p>
     </div>
     </section>
 

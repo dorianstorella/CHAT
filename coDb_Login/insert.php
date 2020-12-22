@@ -6,6 +6,7 @@ echo $_SESSION['pseudo'];
     echo $_SESSION['pseudo'];
 
 ?>
+
 <p>Etes vous sur de vouloir vous deconnecter ?</p>
 <a href="deco.php">
     <button>oui</button>

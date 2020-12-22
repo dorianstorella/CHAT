@@ -10,7 +10,7 @@ if (isset($_POST['email']))
     $stmt -> execute();
 
     $result = $stmt->fetch();
-    print_r ($result);
+    //print_r ($result);
     
     $verifypass = password_verify($_POST['mdp'],$result['mdp']); 
 
