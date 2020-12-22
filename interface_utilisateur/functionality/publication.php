@@ -40,6 +40,7 @@ $result = $stmt -> fetch();
 $_SESSION['publication']=$result['publication'];
 $_SESSION['msg_MHM']=$result['msg_MHM'];
 echo $_SESSION['msg_MHM'];
+//ajouter une limit desc pour ajouter plusieur publication
 ?>
 
 <form action="" method="Post">
