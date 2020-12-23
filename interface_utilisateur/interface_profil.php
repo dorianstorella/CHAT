@@ -46,7 +46,7 @@ session_start();
     modifiez info
     </button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -94,8 +94,8 @@ session_start();
 <div class="col-11">
     <div class="card btn">
     <div class="card-body">
-    <h5 class="card-title">derniere publication</h5>
-    <p class="card-text" id="message"> <?php echo $_SESSION['publication'] . $_SESSION['msg_MHM'] ?></p>
+    <h5 class="card-title">derniere publication du: <?php echo  $_SESSION['msg_MHM']; ?></h5>
+    <p class="card-text" id="message"> <?php echo $_SESSION['publication']  ?></p>
 </div>
 </div>
    

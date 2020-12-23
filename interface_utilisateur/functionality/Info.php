@@ -7,10 +7,10 @@ if (isset($_POST['anniv']))
 {   
     $birthday = $_POST['anniv'];
     $Fname_Lname = $_POST['nom'];
-    $email = $_POST['email'];
+    
     $job = $_POST['job'];
 
-    $sql=("UPDATE utilisateurs SET , anniv='$birthday', job='$job', nom='$Fname_Lname'where id='$id'");
+    $sql=("UPDATE utilisateurs SET  anniv='$birthday', job='$job', nom='$Fname_Lname' where id='$id'");
     $stmt= $db->prepare($sql);
     $stmt->execute();
     echo"success";
@@ -31,7 +31,7 @@ if (isset($_POST['anniv']))
 ?>
 
 
-<form method="Post">
+<form action="" method="Post">
 
 <label for="anniv">anniv</label>
 <input type="text" name="anniv" id="anniv" value="2000-01-01">
@@ -43,7 +43,7 @@ if (isset($_POST['anniv']))
 <input type="text" name="job" id="job">
 
 
-<input type="submit" name="" value="mettre a jour vos info">
+<input type="submit" name="submit" value="mettre a jour vos info">
 </form>
 
 

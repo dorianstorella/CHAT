@@ -8,7 +8,7 @@ if (isset($_POST['pic']))
 {   
     $url =$_POST['pic'];
     echo "$url";
-    $sql =("UPDATE profils set pic = '$url' where id='$id'");
+    $sql =("UPDATE profils set pic = '$url' where id= '$id'");
     $stmt = $db->prepare($sql);
     $stmt -> execute();
     echo "success";
@@ -32,5 +32,5 @@ $_SESSION['pic']=$result['pic'];
 note
 </textarea>
 
-<input type="submit" value="Envoyé">
+<input type="submit" name="submit" value="Envoyé">
 </form>
