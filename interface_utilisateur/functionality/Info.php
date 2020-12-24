@@ -29,20 +29,7 @@ if (isset($_POST['anniv']))
 ?>
 
 
-<form action="" method="Post">
 
-<label for="anniv">anniv</label>
-<input type="text" name="anniv" id="anniv" value="2000-01-01">
-
-<label for="nom">nom</label>
-<input type="text" name="nom" id="nom">
-
-<label for="job">job</label>
-<input type="text" name="job" id="job">
-
-
-<input type="submit" name="submit" value="mettre a jour vos info">
-</form>
 
 
 

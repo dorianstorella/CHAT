@@ -1,7 +1,12 @@
 <?php
-
 session_start();
+include 'c:Users/doria/wamp64/www/CHAT/interface_utilisateur/functionality/form.php';
+include 'c:Users/doria/wamp64/www/CHAT/interface_utilisateur/functionality/Info.php';
+//include 'c:Users/doria/wamp64/www/CHAT/coDb_Login/connBD.php';
 
+//$conn=New Connexion("localhost", "root" ,"" ,"chat");
+
+$info=New Form;
 //echo $_SESSION['pic'];
 ?>
 <!DOCTYPE html>
@@ -54,7 +59,22 @@ session_start();
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-     <?php  include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/Info.php';?>
+     
+     <?php  
+     
+     $info->mrof("", "Post");
+     $info->label("anniv");
+     $info->input("text", "anniv", "2000-01-01");
+     
+     $info->label("nom");
+     $info->input("nom", "nom", "psuedo");
+     
+     $info->label("job");
+     $info->input("text", "job", "status");
+     
+     $info->input("submit", "submit", "submit")
+     ?>
+     </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,11 +97,14 @@ session_start();
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">PIC url</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <?php  include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/profilePic.php';?>
+        <?php 
+         
+            include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/profilePic.php';
+        ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -137,20 +160,11 @@ session_start();
     </ul>
     </div>
 
-    </div>
-    </div>
+    
+    
     </section>
     <!--      AFFICHER AMIS     -->
-    <?php 
-    include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/test.php';
     
-    $info=New Form;
-    $info->mrof("interface ","Post");
-    $info->label("anniv");
-    $info->input("text", "anniv");
-    $
-    ?>
-    </form>
   
 
     <!--          END           -->
