@@ -1,8 +1,8 @@
 <?php
-include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
+//include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
 //session_start();
 //echo $_SESSION["id"];
-$id=$_SESSION["id"];
+//$id=$_SESSION["id"];
 /*$sql = ("SELECT id from publication where id='$id'");
 
 $stmt=$db->prepare($sql);
@@ -28,7 +28,7 @@ if (isset($_POST['publi']))
     $sql=("INSERT INTO publication (publication,id) VALUES ('$publi','$id') ");
     $stmt = $db -> prepare($sql);
     $stmt->execute();
-    echo "success";
+    //echo "success";
 };
 
 $sql = ("SELECT publication, (msg_MHM) from publication where id='$id' order by msg_MHM desc");

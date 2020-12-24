@@ -1,10 +1,12 @@
 <?php
 session_start();
+include 'c:Users/doria/wamp64//www/CHAT/coDB_Login/connBD.php';
 include 'c:Users/doria/wamp64/www/CHAT/interface_utilisateur/functionality/form.php';
 include 'c:Users/doria/wamp64/www/CHAT/interface_utilisateur/functionality/Info.php';
-//include 'c:Users/doria/wamp64/www/CHAT/coDb_Login/connBD.php';
 
-//$conn=New Connexion("localhost", "root" ,"" ,"chat");
+
+
+//$conn=New User("root","");
 
 $info=New Form;
 //echo $_SESSION['pic'];
