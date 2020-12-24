@@ -141,8 +141,17 @@ session_start();
     </div>
     </section>
     <!--      AFFICHER AMIS     -->
-
-
+    <?php 
+    include 'c:Users/doria/wamp64//www/CHAT/interface_utilisateur/functionality/test.php';
+    
+    $info=New Form;
+    $info->mrof("interface ","Post");
+    $info->label("anniv");
+    $info->input("text", "anniv");
+    $
+    ?>
+    </form>
+  
 
     <!--          END           -->
   

@@ -14,7 +14,7 @@ if (isset($_POST['anniv']))
     $stmt= $db->prepare($sql);
     $stmt->execute();
     echo"success";
-    
+   //class  
     $sql = ("SELECT email, anniv, job,nom from utilisateurs where id='$id'");
     $stmt =$db->prepare($sql);
     $stmt ->execute();
@@ -25,8 +25,6 @@ if (isset($_POST['anniv']))
     $_SESSION['job']=$result['job'];
     $_SESSION['nom']=$result['nom'];
 }
-
-
 
 ?>
 
